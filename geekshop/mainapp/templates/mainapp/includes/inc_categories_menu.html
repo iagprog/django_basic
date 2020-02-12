@@ -1,0 +1,10 @@
+{% load static %}
+{% for link in links_menu %}
+    <ul class="nav-menu-ul">
+        <li class="nav-menu-list "><a href="{% url link.href %}"
+            class = "nav-menu-link {% if request.resolver_match.url_name == link.href %}
+                        menu-link-active
+                    {% endif %}"
+            >{{link.name}}</a></li>
+    </ul>
+{% endfor %}
