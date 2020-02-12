@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{ title }}</title>
+    {% block css %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block js %}
+    {% endblock %}
+    <div class="container">
+        <div class="slider padding-site clearfix">
+            Date & time: {% now "jS F Y H:i" %}
+            {% block menu %}
+            {% endblock %}
+        </div>
+        {% block content%}
+        {% endblock %}
+    
+        {% block footer %}
+            <div class="footer">
+                <div class="footer-container">
+                    <div class="footer-info1 footer-info">
+                        <p class="contact-us">contact us</p><br>
+                        <p class="contact-us-text">132A Bridge Road Richmond VIC<br> 
+                            Australia.<br><br>Talk to us on 1300 132<br>info@interior.com</p>
+                    </div>
+                    <div class="footer-info2 footer-info">
+                        <p class="useful-info">Useful Information</p><br>
+                        
+                            <p class="useful-info-text1">Sales terms<br>Customer care<br>Delivery</p>
+                            <p class="useful-info-text2">Architect accounts<br>Careers<br>Exchanges & returns</p>
+
+                        
+                    </div>
+                    <div class="footer-info3 footer-info">
+                        <p class="in-touch">Let’s Stay in Touch!</p><br>
+                        <p class="in-touch-text">Suscribe to know about our latest news, products and special offers just for suscribers.</p>
+                        <input type="email" class="email-input" placeholder="your email address">
+                        
+                    </div>
+                    <div class="bottom-footer">
+                        <p class="copyright bottom-footer-info">© Copyright - INTERIOR 2016. All Rights Reserved.</p>
+                        <p class="social bottom-footer-info"><img src="{% static 'img/social-links.png' %}" alt=""></p>
+                        <p class="terms bottom-footer-info">Terms Conditions/Privacy policy Cookies</p>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

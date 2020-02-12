@@ -1,0 +1,15 @@
+{% load static %}
+<div class="header clearfix">
+    <a href="#"><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
+    <ul class="menu clearfix">
+        <li class="menu-list"><a href="{% url 'main' %}" 
+            class="menu-link {% if request.resolver_match.url_name == 'main'%}menu-link-active{% endif %}">HOME</a></li>
+        <li class="menu-list"><a href="{% url 'products' %}" 
+            class="menu-link {% if request.resolver_match.url_name == 'products'%}menu-link-active{% endif %}">PRODUCTS</a></li>
+        <li class="menu-list"><a href="/history/" class="menu-link">HISTORY</a></li>
+        <li class="menu-list"><a href="/product-details/" class="menu-link">SHOWROOM</a></li>
+        <li class="menu-list"><a href="{% url 'contact' %}" 
+            class="menu-link {% if request.resolver_match.url_name == 'contact'%}menu-link-active{% endif %}">CONTACT</a></li>
+        <li class="menu-list"><a href="#" class="menu-link"><img src="{% static '/img/search.svg' %}" alt="search"></a></li>
+    </ul>
+</div>
