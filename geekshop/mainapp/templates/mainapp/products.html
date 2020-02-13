@@ -1,47 +1,38 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-        {% block menu %}
-            {% include 'mainapp/includes/inc_menu.html' %}
-            <h2 class="h2-welcome">Our Products Range</h2>
-        {% endblock %}
-        {% block content %}
-            <div class="nav-menu padding-site clearfix">
-                <div class="nav-menu-header clearfix"> 
-                    {% include 'mainapp/includes/inc_categories_menu.html' %} 
+{% block menu %}
+    {% include 'mainapp/includes/inc_menu.html' %}
+    <h2 class="h2-welcome">Our Products Range</h2>
+{% endblock %}
+{% block content %}
+    <div class="nav-menu padding-site clearfix">
+        <div class="nav-menu-header clearfix"> 
+            {% include 'mainapp/includes/inc_categories_menu.html' %} 
+        </div>
+    </div>
+    <div class="main clearfix">
+            {% for product in products %}
+                <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt="{{ product.short_desc }}"></a>
+            {% endfor %}
+    </div>
+    <div class="refresh padding-site clearfix">
+            <div class="refresh-site"><a href="products/">
+                <img src="{% static 'img/refresh.jpg' %}" alt="refresh.jpg" class="refresh-button"></a>
+            </div>
+    </div>
+    <div class="exclusive-chairs-products clearfix">
+        {% for excl in excl_products %}
+            <div class="chair">
+                <div class="chair-content">
+                    <p class="excl-text">{{ excl.category.name }}</p>
+                    <h4 class="excl-h4">{{ excl.name }}</h4>
+                    <p class="excl-p">{{ excl.description }}</p>
+                    <img src="/media/{{ excl.image }}" alt="{{ excl.short_desc }}">
+                    <a class="excl-button button" href="#">order us
+                    <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
                 </div>
             </div>
-            <div class="main clearfix">
-                    {% for product in products %}
-                        <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt="{{ product.short_desc }}"></a>
-                    {% endfor %}
-            </div>
-            <div class="refresh padding-site clearfix">
-                    <div class="refresh-site"><a href="products/">
-                        <img src="{% static 'img/refresh.jpg' %}" alt="refresh.jpg" class="refresh-button"></a>
-                    </div>
-            </div>
-            <div class="exclusive-chairs-products clearfix">
-                {% for excl in excl_products %}
-                    <div class="chair">
-                        <div class="chair-content">
-                            <p class="excl-text">{{ excl.category.name }}</p>
-                            <h4 class="excl-h4">{{ excl.name }}</h4>
-                            <p class="excl-p">{{ excl.description }}</p>
-                            <img src="/media/{{ excl.image }}" alt="{{ excl.short_desc }}">
-                            <a class="excl-button button" href="#">order us
-                            <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-       {% endblock %}
-   </div>
-</body>
-</html>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,33 +1,25 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-        {% block menu %}
-             {% include 'mainapp/includes/inc_menu.html' %}
-             <h2 class="h2-contact">Contact Us</h2>
-        {% endblock %}
-        {% block content %}
-            <div class="main-contact padding-site clearfix">
-                {% for contact in contacts %}
-                    <div class="contact-info">
-                        <div class="info-block">
-                            <img class="location-img" src="/media/{{ contact.image }}" alt="{{contact.short_desc}}"><br><br>
-                            <h2 class="h2-country">{{ contact.country.name }}</h2>
-                            <p class="contact-form">Phone:</p>
-                            <p class="contact-data">{{ contact.phone }}</p><br>
-                            <p class="contact-form">Email:</p>
-                            <p class="contact-data">{{ contact.email }}</p><br>
-                            <p class="contact-form">Address:</p>
-                            <p class="contact-address">{{ contact.address }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+{% block menu %}
+        {% include 'mainapp/includes/inc_menu.html' %}
+        <h2 class="h2-contact">Contact Us</h2>
+{% endblock %}
+{% block content %}
+    <div class="main-contact padding-site clearfix">
+        {% for contact in contacts %}
+            <div class="contact-info">
+                <div class="info-block">
+                    <img class="location-img" src="/media/{{ contact.image }}" alt="{{contact.short_desc}}"><br><br>
+                    <h2 class="h2-country">{{ contact.country.name }}</h2>
+                    <p class="contact-form">Phone:</p>
+                    <p class="contact-data">{{ contact.phone }}</p><br>
+                    <p class="contact-form">Email:</p>
+                    <p class="contact-data">{{ contact.email }}</p><br>
+                    <p class="contact-form">Address:</p>
+                    <p class="contact-address">{{ contact.address }}</p>
+                </div>
             </div>
-        {% endblock %}
-</body>
-</html>
+        {% endfor %}
+    </div>
+{% endblock %}
