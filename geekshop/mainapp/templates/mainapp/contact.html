@@ -16,14 +16,14 @@
                 {% for contact in contacts %}
                     <div class="contact-info">
                         <div class="info-block">
-                            <img class="location-img" src="{% static '/img/' %}{{contact.img_src}}" alt="{{contact.alt}}"><br><br>
-                            <h2 class="h2-country">{{contact.country}}</h2>
+                            <img class="location-img" src="/media/{{ contact.image }}" alt="{{contact.short_desc}}"><br><br>
+                            <h2 class="h2-country">{{ contact.country.name }}</h2>
                             <p class="contact-form">Phone:</p>
-                            <p class="contact-data">{{contact.phone}}</p><br>
+                            <p class="contact-data">{{ contact.phone }}</p><br>
                             <p class="contact-form">Email:</p>
-                            <p class="contact-data">{{contact.email}}</p><br>
+                            <p class="contact-data">{{ contact.email }}</p><br>
                             <p class="contact-form">Address:</p>
-                            <p class="contact-address">{{contact.address}}</p>
+                            <p class="contact-address">{{ contact.address }}</p>
                         </div>
                     </div>
                 {% endfor %}

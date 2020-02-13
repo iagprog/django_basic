@@ -19,7 +19,7 @@
             </div>
             <div class="main clearfix">
                     {% for product in products %}
-                        <a href="{{product.img_ref}}"><img src="{% static 'img/' %}{{product.img_src}}" alt="{{product.alt}}"></a>
+                        <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt="{{ product.short_desc }}"></a>
                     {% endfor %}
             </div>
             <div class="refresh padding-site clearfix">
@@ -31,10 +31,10 @@
                 {% for excl in excl_products %}
                     <div class="chair">
                         <div class="chair-content">
-                            <p class="excl-text">exclusive</p>
-                            <h4 class="excl-h4">{{excl.name}}</h4>
-                            <p class="excl-p">{{excl.descr}}</p>
-                            <img src="{% static '/img/' %}{{excl.img_src}}" alt="{{excl.alt}}">
+                            <p class="excl-text">{{ excl.category.name }}</p>
+                            <h4 class="excl-h4">{{ excl.name }}</h4>
+                            <p class="excl-p">{{ excl.description }}</p>
+                            <img src="/media/{{ excl.image }}" alt="{{ excl.short_desc }}">
                             <a class="excl-button button" href="#">order us
                             <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
                         </div>

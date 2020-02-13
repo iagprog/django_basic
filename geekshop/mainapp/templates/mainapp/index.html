@@ -1,5 +1,7 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,15 +51,15 @@
             {% for excl in excl_main %}
             <div class="chair">
                 <div class="chair-content">
-                    <p class="excl-text">exclusive</p>
-                    <h4 class="excl-h4">{{excl.name}}</h4>
-                    <p class="excl-p">{{excl.descr}}</p>
-                    <img src="{% static '/img/' %}{{excl.img_src}}" alt="{{excl.alt}}">
+                    <p class="excl-text">{{ excl.category.name }}</p>
+                    <h4 class="excl-h4">{{ excl.name }}</h4>
+                    <p class="excl-p">{{ excl.description }}</p>
+                    <img src="media/{{ excl.image }}" alt="{{ excl.short_desc }}">
                     <a class="excl-button button" href="#">order us
                     <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
        </div>
 
 
