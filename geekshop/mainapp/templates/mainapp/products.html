@@ -21,20 +21,5 @@
                 <img src="{% static 'img/refresh.jpg' %}" alt="refresh.jpg" class="refresh-button"></a>
             </div>
     </div>
-    <div class="exclusive-chairs-products clearfix">
-        {% for product in products %}
-            {% if product.category.name == "exclusive" %}
-                <div class="chair">
-                    <div class="chair-content">
-                        <p class="excl-text">{{ product.category.name }}</p>
-                        <h4 class="excl-h4">{{ product.name }}</h4>
-                        <p class="excl-p">{{ product.description }}</p>
-                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
-                        <a class="excl-button button" href="#">order us
-                        <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
-                    </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
+    {% include 'mainapp/includes/inc_exclusive.html' %}
 {% endblock %}

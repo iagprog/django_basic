@@ -313,14 +313,15 @@ featured-content-items{
     float: left;
 }
 
-.exclusive-chairs{
-    padding-top: 120px;
-}
-
 .chair-content{
     max-width: 1366px;
     padding: 16.7% 19% 18.7% 3.7%;
 }
+
+.exclusive-chairs{
+    padding-top: 120px;
+}
+
 
 .excl-text{
     color: #1e88e5;

@@ -41,18 +41,7 @@
 </div>
 
 <div class="exclusive-chairs clearfix">
-    {% for excl in excl_main %}
-    <div class="chair">
-        <div class="chair-content">
-            <p class="excl-text">{{ excl.category.name }}</p>
-            <h4 class="excl-h4">{{ excl.name }}</h4>
-            <p class="excl-p">{{ excl.description }}</p>
-            <img src="media/{{ excl.image }}" alt="{{ excl.short_desc }}">
-            <a class="excl-button button" href="#">order us
-            <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
-        </div>
-    </div>
-    {% endfor %}
+    {% include 'mainapp/includes/inc_exclusive.html' %}
 </div>
 <div class="trending-products padding-site clearfix">
     <div class="trending-header clearfix">
