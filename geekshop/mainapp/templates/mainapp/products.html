@@ -8,7 +8,7 @@
 {% block content %}
     <div class="nav-menu padding-site clearfix">
         <div class="nav-menu-header clearfix"> 
-            {% include 'mainapp/includes/inc_categories_menu.html' %} 
+            {% include 'mainapp/includes/inc_categories_menu.html' %}
         </div>
     </div>
     <div class="main clearfix">
@@ -22,17 +22,19 @@
             </div>
     </div>
     <div class="exclusive-chairs-products clearfix">
-        {% for excl in excl_products %}
-            <div class="chair">
-                <div class="chair-content">
-                    <p class="excl-text">{{ excl.category.name }}</p>
-                    <h4 class="excl-h4">{{ excl.name }}</h4>
-                    <p class="excl-p">{{ excl.description }}</p>
-                    <img src="/media/{{ excl.image }}" alt="{{ excl.short_desc }}">
-                    <a class="excl-button button" href="#">order us
-                    <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
+        {% for product in products %}
+            {% if product.category.name == "exclusive" %}
+                <div class="chair">
+                    <div class="chair-content">
+                        <p class="excl-text">{{ product.category.name }}</p>
+                        <h4 class="excl-h4">{{ product.name }}</h4>
+                        <p class="excl-p">{{ product.description }}</p>
+                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                        <a class="excl-button button" href="#">order us
+                        <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}
