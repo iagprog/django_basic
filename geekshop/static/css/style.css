@@ -771,9 +771,7 @@ featured-content-items{
 }
 
 .refresh-site{
-    padding-top: 71px;
-    padding-left: 574px;
-    padding-right: 554px;
+    padding: 71px 554px 71px 574px; 
 }
 
 .refresh-button{
