@@ -313,14 +313,15 @@ featured-content-items{
     float: left;
 }
 
-.exclusive-chairs{
-    padding-top: 120px;
-}
-
 .chair-content{
     max-width: 1366px;
     padding: 16.7% 19% 18.7% 3.7%;
 }
+
+.exclusive-chairs{
+    padding-top: 120px;
+}
+
 
 .excl-text{
     color: #1e88e5;
@@ -770,9 +771,7 @@ featured-content-items{
 }
 
 .refresh-site{
-    padding-top: 71px;
-    padding-left: 574px;
-    padding-right: 554px;
+    padding: 71px 554px 71px 574px; 
 }
 
 .refresh-button{

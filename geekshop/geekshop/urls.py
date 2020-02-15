@@ -15,17 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 import mainapp.views as mainapp
+
 
 urlpatterns = [
     path( '' , mainapp.main, name = "main"),
     path( 'products/' , mainapp.products, name = "products"),
     path( 'contact/' , mainapp.contact, name = "contact"),
-    path( 'products/products_all' , mainapp.products, name = "products_all"),
-    path( 'products/products_home' , mainapp.products, name = "products_home"),
-    path( 'products/products_office' , mainapp.products, name = "products_office"),
-    path( 'products/products_furniture' , mainapp.products, name = "products_furniture"),
-    path( 'products/products_modern' , mainapp.products, name = "products_modern"),
-    path( 'products/products_classic' , mainapp.products, name = "products_classic"),
+    path( 'products/all' , mainapp.products, name = "all"),
+    path( 'products/home' , mainapp.products, name = "home"),
+    path( 'products/office' , mainapp.products, name = "office"),
+    path( 'products/furniture' , mainapp.products, name = "furniture"),
+    path( 'products/modern' , mainapp.products, name = "modern"),
+    path( 'products/classic' , mainapp.products, name = "classic"),
+    path( 'products/exclusive' , mainapp.products, name = "exclusive"),
     path('admin/', admin.site.urls),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
