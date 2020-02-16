@@ -4,16 +4,16 @@ from .models import Product, Contact, ProductCategory, ContactCountry
 # Create your views here.
 def main(request):
     title = "Home"
-    excl = Product.objects.all()[:2]
+    excl = Product.objects.all()[12:]
     content = {"title": title, "excl": excl}
     return render(request, 'mainapp/index.html', content)
 
 
 def products(request):
     title = "Products"
-    excl = Product.objects.all()[:2]
-    products = Product.objects.all()[2:]
-    categories = ProductCategory.objects.all()
+    excl = Product.objects.all()[12:]
+    products = Product.objects.all()[:12]
+    categories = ProductCategory.objects.all()[:5]
     content = {"title": title, "excl": excl, "categories": categories, "products": products}
     return render(request, 'mainapp/products.html', content)
 

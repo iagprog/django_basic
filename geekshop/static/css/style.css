@@ -318,11 +318,6 @@ featured-content-items{
     padding: 16.7% 19% 18.7% 3.7%;
 }
 
-.exclusive-chairs{
-    padding-top: 120px;
-}
-
-
 .excl-text{
     color: #1e88e5;
     font-size: 18px;
@@ -771,7 +766,7 @@ featured-content-items{
 }
 
 .refresh-site{
-    padding: 71px 554px 71px 574px; 
+    padding: 71px 554px 0px 574px; 
 }
 
 .refresh-button{
@@ -784,8 +779,8 @@ featured-content-items{
     height: 19px;
 }
 
-.exclusive-chairs-products{
-    padding-top: 140px;
+.exclusive-products{
+    padding-top: 120px;
 }
 
 /*******product-details.html************/

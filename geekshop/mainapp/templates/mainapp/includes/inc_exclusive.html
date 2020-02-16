@@ -1,7 +1,7 @@
 {% load static %}
 
 {% for el in excl %}
-<div class="chair">
+    <div class="chair">
         <div class="chair-content">
             <p class="excl-text">{{ el.category.name }}</p>
             <h4 class="excl-h4">{{ el.name }}</h4>
@@ -10,5 +10,5 @@
             <a class="excl-button button" href="#">order us
             <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
         </div>
-</div>
+    </div>
 {% endfor %}
