@@ -21,18 +21,11 @@ import mainapp.views as mainapp
 
 
 urlpatterns = [
-    path( '' , mainapp.main, name = "main"),
-    path( 'products/' , mainapp.products, name = "products"),
-    path( 'contact/' , mainapp.contact, name = "contact"),
-    path( 'products/all' , mainapp.products, name = "all"),
-    path( 'products/home' , mainapp.products, name = "home"),
-    path( 'products/office' , mainapp.products, name = "office"),
-    path( 'products/furniture' , mainapp.products, name = "furniture"),
-    path( 'products/modern' , mainapp.products, name = "modern"),
-    path( 'products/classic' , mainapp.products, name = "classic"),
-    path( 'products/exclusive' , mainapp.products, name = "exclusive"),
-    path( 'auth/', include('authapp.urls', namespace = 'auth')),
-    path( 'admin/', admin.site.urls),
+    path('' , mainapp.main, name = 'main'),
+    path('contact/' , mainapp.contact, name = 'contact'),
+    path('products/', include('mainapp.urls', namespace = 'products')),
+    path('auth/', include('authapp.urls', namespace = 'auth')),
+    path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
