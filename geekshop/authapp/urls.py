@@ -7,5 +7,5 @@ urlpatterns = [
     path('login/' , authapp.login, name= 'login'),
     path('logout/' , authapp.logout, name= 'logout'),
     path('edit/' , authapp.logout, name= 'edit'),
-    path('register/' , authapp.logout, name= 'register'),
+    path('register/' , authapp.register, name= 'register'),
 ]
