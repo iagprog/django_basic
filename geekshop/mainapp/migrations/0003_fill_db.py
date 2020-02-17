@@ -9,12 +9,18 @@ def forwards_func(apps, schema_editor):
     product_category = apps.get_model("mainapp", "ProductCategory")  
     product = apps.get_model("mainapp", "Product")  
     contact_country = apps.get_model("mainapp", "ContactCountry")
-    contact = apps.get_model("mainapp", "Contact")  
-    
+    contact = apps.get_model("mainapp", "Contact")
+
     # Create new category
 
     product_category_obj = product_category.objects.create(
         pk=1,
+        name="All", description="All products")  
+    
+    # Create new category
+
+    product_category_obj = product_category.objects.create(
+        pk=2,
         name="home", description="home products")
 
     # Create new products in this category
@@ -54,7 +60,7 @@ def forwards_func(apps, schema_editor):
     # Create new category
 
     product_category_obj = product_category.objects.create(
-        pk=2,
+        pk=3,
         name="office", description="office products"
     )
     # Create new products in this category
@@ -94,7 +100,7 @@ def forwards_func(apps, schema_editor):
     # Create new category
 
     product_category_obj = product_category.objects.create(
-        pk=3,
+        pk=4,
         name="furniture", description="furniture products")
 
     # Create new products in this category
@@ -124,8 +130,8 @@ def forwards_func(apps, schema_editor):
     # Create new category
 
     product_category_obj = product_category.objects.create(
-    pk=4,
-    name="modern", description="modern products")
+        pk=5,
+        name="modern", description="modern products")
 
     # Create new products in this category
 
@@ -154,8 +160,8 @@ def forwards_func(apps, schema_editor):
     # Create new category
 
     product_category_obj = product_category.objects.create(
-    pk=5,
-    name="classic", description="classic products")
+        pk=6,
+        name="classic", description="classic products")
 
     # Create new products in this category
 
