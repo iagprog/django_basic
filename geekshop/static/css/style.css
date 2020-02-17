@@ -306,19 +306,25 @@ featured-content-items{
     position: absolute;
     margin: 14px 18px;
 }
-
-.chair{
-    width: 50%;
-    height: 100%;
-    float: left;
+.exclusive-products{
+    padding-top: 120px;
 }
 
-.chair-content{
-    max-width: 1366px;
-    padding: 16.7% 19% 18.7% 3.7%;
+.exclusive{
+    float: left;
+    position: relative;
+}
+
+.excl-content{
+    position: absolute;
+    bottom: 256px;
+    right: 259px; 
+    left: 50px;
+    top: 311px;
 }
 
 .excl-text{
+    padding-top: 50px;
     color: #1e88e5;
     font-size: 18px;
     font-weight: 700;
@@ -339,12 +345,6 @@ featured-content-items{
     font-weight: 300;
     padding-top: 24px;
     padding-bottom: 34px;
-}
-
-.excl-button{
-    display: block;
-    margin-left: auto;
-    margin-right: auto
 }
 
 .trending-header{
@@ -779,9 +779,7 @@ featured-content-items{
     height: 19px;
 }
 
-.exclusive-products{
-    padding-top: 120px;
-}
+
 
 /*******product-details.html************/
 
