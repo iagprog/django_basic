@@ -3,17 +3,16 @@
 
 {% block content %}
 
+
 <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+    <h3><span class="label label-default">Edit</span></h3>
     {% csrf_token %}
-    <p>Edit</p>
     {{ edit_form.as_p }}
     <input class="form-control" type="submit" value="save">
+    <button class="form-control">
+        <a href="{% url 'main' %}">Home page</a>
+    </button>
 </form>
-<button class="btn btn-round form-control last">
-    <a href="{% url 'main' %}" class="">
-        Home page
-    </a>
-</button>
 
 {% if user.avatar %}
     <div class="user_avatar"><img src="{{ media_url }}{{ user.avatar }}"></div>

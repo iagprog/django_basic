@@ -3,12 +3,13 @@
 
 {% block content %}
 
+
 <form class="form-horizontal" action="{% url 'auth:register' %}" method="post" enctype="multipart/form-data">
+    <h3><span class="label label-default">Registration</span></h3>
     {% csrf_token %}
-    <p>Registration</p>
     {{ register_form.as_p }}
     <br>
-    <input class="form-control" type="submit" value="registration">
+    <button type="submit">Register</button>
 </form>
 
 {% endblock %}
