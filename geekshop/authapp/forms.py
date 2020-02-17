@@ -3,13 +3,14 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, User
 from .models import ShopUser
 
 class ShopUserLoginForm(AuthenticationForm):
-    class Meta :
-        model = ShopUser
-        fields = ('username' , 'password')
     def __init__ (self, *args, **kwargs):
         super(ShopUserLoginForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
+    
+    class Meta :
+        model = ShopUser
+        fields = ('username' , 'password')
 
 
 class ShopUserRegisterForm(UserCreationForm):
@@ -41,7 +42,6 @@ class ShopUserEditForm(UserChangeForm):
         data = self.cleaned_data["age"]
         if data < 18:
             raise forms.ValidationError("You are too young!")
-
         return data
 
     class Meta:

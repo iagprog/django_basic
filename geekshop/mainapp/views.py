@@ -13,7 +13,7 @@ def products(request, pk=None):
     title = "Products"
     excl = Product.objects.all()[12:]
     products = Product.objects.all()[:12]
-    categories = ProductCategory.objects.all()[:]
+    categories = ProductCategory.objects.all()[:6]
     content = {"title": title, "excl": excl, "categories": categories, "products": products, "pk":pk}
     return render(request, 'mainapp/products.html', content)
 

@@ -1,5 +1,8 @@
 {% load static %}
 
+{% comment %}
+You should upload exclusive images via the control panel
+{% endcomment %}
 {% for el in excl %}
     <div class="exclusive">
         <img class="excl-img" src="/media/{{ el.image }}" alt="{{ el.short_desc }}">
