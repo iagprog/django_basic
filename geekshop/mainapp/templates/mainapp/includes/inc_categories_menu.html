@@ -1,8 +1,9 @@
 <ul class = "nav-menu-ul">
     {% for category in categories %}
+
         <li class="nav-menu-list"><a href="{% url 'products:category' category.pk %}"
             class = "nav-menu-link
-            {% if pk == category.pk %}
+            {% if pk == category.pk or pk == None and category.pk == 1 %}
                 menu-link-active
             {% endif %}"
             >{{ category.name }}</a>
