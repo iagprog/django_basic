@@ -187,13 +187,40 @@ def forwards_func(apps, schema_editor):
     )
     del product_category_obj  # Delete link for category
 
+    # Create new category
+
+    product_category_obj = product_category.objects.create(
+        pk=7,
+        name="exclusive", description="exclusive products")
+    product.objects.create(
+        pk=13,
+        category=product_category_obj,  # Foreign key
+        name="Fishnet Chair",
+        image="products_images/exclusive-img1.jpg",
+        short_desc="chair1",
+        description="Seat and back with upholstery made of cold cure foam. Steel frame, available in matt.",
+        price="111",
+        quantity="11",
+    )
+    product.objects.create(
+        pk=14,
+        category=product_category_obj,  # Foreign key
+        name="Fishnet Chair",
+        image="products_images/exclusive-img2.jpg",
+        short_desc="chair2",
+        description="Seat and back with upholstery made of cold cure foam. Steel frame, available in matt.",
+        price="222",
+        quantity="22",
+    )
+    del product_category_obj  # Delete link for category
+
     # Create contacts in each country
 
     contact_country_obj = contact_country.objects.create(
     pk=1,
     name="Thailand", info="Thailand contacts")
     contact.objects.create(
-        pk=13,
+        pk=15,
         country=contact_country_obj,  # Foreign key
         phone="9999-1234-5678", 
         email="thailand@interior.com", 
@@ -207,7 +234,7 @@ def forwards_func(apps, schema_editor):
         pk=2,
         name="Vietnam", info="Vietnam contacts")
     contact.objects.create(
-        pk=14,
+        pk=16,
         country=contact_country_obj,  # Foreign key
         phone="8888-1234-5678",
         email="vietnam@interior.com",
@@ -221,7 +248,7 @@ def forwards_func(apps, schema_editor):
     pk=3,
     name="Costa-Rica", info="Costa-Rica contacts")
     contact.objects.create(
-        pk=15,
+        pk=17,
         country=contact_country_obj,  # Foreign key
         phone="7777-1234-5678",
         email="costa-rica@interior.com", 
