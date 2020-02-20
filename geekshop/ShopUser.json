@@ -1,0 +1,22 @@
+[
+    {
+        "model": "authapp.shopuser",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$180000$nljmxuN4UqLe$bALCD4RVYLJoa/7Pc/6E8ZsLOrLYfWWaFK437x9zilI=",
+            "last_login": "2020-02-17T11:41:10.857Z",
+            "is_superuser": true,
+            "username": "django",
+            "first_name": "",
+            "last_name": "",
+            "email": "root@geekbrains.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2020-02-17T10:58:56.216Z",
+            "avatar": "",
+            "age": 32,
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]
