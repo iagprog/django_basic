@@ -1,14 +1,16 @@
 {% load static %}
 
+{% comment %}
+You should upload exclusive images via the control panel
+{% endcomment %}
 {% for el in excl %}
-<div class="chair">
-        <div class="chair-content">
+    <div class="exclusive">
+        <img class="excl-img" src="/media/{{ el.image }}" alt="{{ el.short_desc }}">
+        <div class = "excl-content">
             <p class="excl-text">{{ el.category.name }}</p>
             <h4 class="excl-h4">{{ el.name }}</h4>
             <p class="excl-p">{{ el.description }}</p>
-            <img src="/media/{{ el.image }}" alt="{{ el.short_desc }}">
-            <a class="excl-button button" href="#">order us
-            <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
+            <a class="button" href="#">order us</a>      
         </div>
-</div>
+    </div>
 {% endfor %}
