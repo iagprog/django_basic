@@ -13,7 +13,19 @@
     </div>
     <div class="main clearfix">
             {% for product in products %}
-                <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt="{{ product.short_desc }}"></a>
+                <div class = "with-hover">
+                    {% if user.is_authenticated %}
+                        <a  href="{% url 'basket:add' product.pk %}">
+                    {% else %}
+                        <a  href="{% url 'auth:login' %}">
+                    {% endif %}
+                    <div class="top-img">
+                        <img class = "icon-hover" src="{% static '/img/icon-hover.png' %}" alt="icon-hover">
+                        <h2 class="top-h2">{{ product.name }}</h2>
+                        <p class ="top-text">{{ product.description }}</p>
+                    </div> 
+                    <img class = "behind-img" src="/media/{{ product.image }}" alt="{{ product.short_desc }}"></a>
+                </div>
             {% endfor %}
     </div>
     <div class="refresh padding-site clearfix">
