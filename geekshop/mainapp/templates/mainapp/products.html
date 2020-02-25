@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block menu %}
-    {% include 'mainapp/includes/inc_menu.html' %}
-    <h2 class="h2-welcome">Our Products Range</h2>
+<div class="welcome padding-site clearfix">
+    <div class="header-products clearfix">
+        {% include 'mainapp/includes/inc_menu.html' %}
+        <h2 class="h2-welcome">Our Products Range</h2>
+    </div>
+</div>
 {% endblock %}
 {% block content %}
-    <div class="nav-menu padding-site clearfix">
-        <div class="nav-menu-header clearfix"> 
-            {% include 'mainapp/includes/inc_categories_menu.html' %}
-        </div>
-    </div>
+    {% include 'mainapp/includes/inc_categories_menu.html' %}
     <div class="main clearfix">
             {% for product in products %}
                 <div class = "with-hover">
                     {% if user.is_authenticated %}
-                        <a  href="{% url 'basket:add' product.pk %}">
+                        <a  href="{% url 'products:showroom' product.pk %}">
                     {% else %}
                         <a  href="{% url 'auth:login' %}">
                     {% endif %}

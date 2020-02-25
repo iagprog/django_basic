@@ -14,11 +14,10 @@
     {% block js %}
     {% endblock %}
     <div class="container">
-        <div class="slider padding-site clearfix">
-            Date & time: {% now "jS F Y H:i" %}
-            {% block menu %}
-            {% endblock %}
-        </div>
+        Date & time: {% now "jS F Y H:i" %}
+        {% block menu %}
+        {% endblock %}
+
         {% block content%}
         {% endblock %}
     

@@ -2,16 +2,18 @@
 {% load static %}
 
 {% block menu %}    
-    {% include 'mainapp/includes/inc_menu.html' %}
-    <div class="slider-text clearfix">
-        <p class="slider-trending">TRENDING</p>
-        <h2 class="slider-h2">Fishnet Chair</h2>
-        <p class="slider-content">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black</p>
-        <a href="#" class="button">Order Us
-        <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
-    </div>
-    <div class="pagination clearfix">
-        <a href="#" class="circle"></a><a href="#" class="circle circle-active"></a><a href="#" class="circle"></a>
+    <div class="slider padding-site clearfix">
+        {% include 'mainapp/includes/inc_menu.html' %}
+        <div class="slider-text clearfix">
+            <p class="slider-trending">TRENDING</p>
+            <h2 class="slider-h2">Fishnet Chair</h2>
+            <p class="slider-content">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black</p>
+            <a href="#" class="button">Order Us
+            <img src="{% static 'img/arrow.svg' %}" alt="arrow.svg"></a>
+        </div>
+        <div class="pagination clearfix">
+            <a href="#" class="circle"></a><a href="#" class="circle circle-active"></a><a href="#" class="circle"></a>
+        </div>
     </div>
 {% endblock %}
 {% block content %}

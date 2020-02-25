@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import Product, Contact, ProductCategory, ContactCountry
-from basketapp.models import Basket 
+from basketapp.models import Basket
+from django.shortcuts import get_object_or_404
+from django.conf import settings
+import random
+
 
 # Create your views here.
 def main(request):
@@ -17,6 +21,11 @@ def get_basket(user):
         return []
 
 
+def get_hot_product():
+    products = Product.objects.exclude(category__name = 'exclusive')
+    return random.sample(list(products), 1)[0]
+
+
 def products(request, pk=None):
     title = "Products"
     basket = []
@@ -28,8 +37,23 @@ def products(request, pk=None):
     else:
         products = Product.objects.filter(category__pk = pk)
     categories = ProductCategory.objects.exclude(name = 'exclusive')
-    content = {"title": title, "excl": excl, "categories": categories, "products": products, "basket": basket, "pk":pk}
+    content = {"title": title, "excl": excl, "categories": categories, "products": products, "basket": basket, "pk": pk}
     return render(request, 'mainapp/products.html', content)
+
+
+def showroom(request, pk):
+    title = "Showroom"
+    if pk == 0:
+        pk = get_hot_product().pk
+    content = {
+        "title": title,
+        "categories": ProductCategory.objects.exclude(name = 'exclusive'),
+        "product": get_object_or_404(Product, pk=pk),
+        "basket": get_basket(request.user),
+        "media_url": settings.MEDIA_URL,
+        "pk": pk,
+    }
+    return render(request, "mainapp/showroom.html", content)
 
 
 def contact(request):
