@@ -10,6 +10,13 @@ def main(request):
     return render(request, 'mainapp/index.html', content)
 
 
+def get_basket(user):
+    if user.is_authenticated:
+        return Basket.objects.filter(user=user)
+    else:
+        return []
+
+
 def products(request, pk=None):
     title = "Products"
     basket = []
