@@ -706,7 +706,7 @@ featured-content-items{
 }
 
 .h2-welcome{
-    padding-top: 168px;
+    padding-top: 120px;
     padding-bottom: 44px;
     color: #212121;
     font-size: 62px;
@@ -821,11 +821,15 @@ featured-content-items{
 }
 
 .side-image{
-    float: left;
-    padding-right: 10px;
     width: 70px;
     height: 70px;
 }
+
+.side-block{
+    float: left;
+    padding-right: 10px;
+}
+
 /* price details */
 .price{
     width: 510px;
@@ -851,8 +855,6 @@ featured-content-items{
 .chair-price{
     margin-top:36px;
     padding-left: 141px;
-    width: 237px;
-    height: 57px;
 }
 /* styles for [$] [36.7] [/sq]*/
 .price-style{
@@ -862,7 +864,7 @@ featured-content-items{
     font-weight: 300;
 }
 .price-style1{
-    font-size: 48px;
+    font-size: 24px;
 }
 .price-style2{
     font-size: 72px;
@@ -886,26 +888,34 @@ featured-content-items{
 }
 
 /* button */
+
 .red-button{
     box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
     border-radius: 35px;
     background-color: #f44336;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 4.4px;
-    text-align: center;
     display: inline-block;
     width: 510px;
     height: 71px;
     margin-top: 58px;
     position: relative;
+    text-decoration: none;
+}
+
+.red-button span{
+    position:absolute;
+    margin-left:160px;
+    margin-top:22px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4.4px;
 }
 
 .white-arrow{
     position: absolute;
-    padding: 0px 28px;
+    margin-left: 334px;
+    margin-top: 23px;
 }
 
 .red-button:hover{
@@ -978,14 +988,6 @@ featured-content-items{
 }
 
 /**************contact.html*****************/
-.h2-contact{
-    padding-top: 171px;
-    padding-bottom: 56px;
-    color: #212121;
-    font-size: 62px;
-    font-weight: 400;
-}
-
 .main-contact{
     padding-top: 71px;
     padding-bottom: 122px;
@@ -1053,14 +1055,6 @@ featured-content-items{
     height: 27px;
 }
 
-.h2-welcome{
-    padding-top: 168px;
-    padding-bottom: 44px;
-    color: #212121;
-    font-size: 62px;
-    font-weight: 400;
-}
-
 .form-horizontal{
     width: 200px;
     margin-left:auto;
@@ -1121,5 +1115,111 @@ featured-content-items{
     display: block;
 }
 
+.basket_container {
+    margin: 25px auto;
+    width: 700px;
+}
 
+.basket_list input[type="number"] {
+    width: 3em;
+    position: relative;
+    display: block;
+    float: left;
+}
 
+.basket_list span.category_name {
+    margin-left: 2em;
+    width: 5em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket_list span.product_name {
+    margin-left: 1em;
+    width: 8em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket_list span.product_price {
+    margin-left: 1em;
+    width: 7em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket_list span.product_cost {
+    margin-left: 1em;
+    width: 7em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket_list .basket_record {
+    position: relative;
+    display: block;
+    height: 170px;
+    float: none;
+}
+
+.basket_container .head {
+    margin: 25px auto;
+}
+
+.basket_container button {
+    margin-left: 25px;
+    width: 150px;
+    display: block;
+    float: left;
+}
+
+.basket_container button a {
+    text-decoration: none;
+    color: #555;
+}
+
+.basket_container img {
+    display: block;
+    float: left;
+    width: 150px;
+    border-radius: 25px;
+}
+
+.basket_container input[type="submit"] {
+    width: 150px;
+    display: block;
+    float: left;
+    margin-bottom: 25px;
+}
+
+.basket_container .basket_summary {
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.products_list .title {
+    margin: 20px auto;
+    height: 50px;
+    float: none;
+}
+
+.products_list .title h2 {
+    margin-top: 0;
+    float: left;
+}
+
+.products_list .title .paginator {
+    display: block;
+    position: relative;
+    left: 75px;
+    top: 15px;
+    margin-left: 25px;
+    color: #555;
+    float: left;
+}

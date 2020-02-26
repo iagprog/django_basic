@@ -1,12 +1,15 @@
-<ul class = "nav-menu-ul">
-    {% for category in categories %}
-
-        <li class="nav-menu-list"><a href="{% url 'products:category' category.pk %}"
-            class = "nav-menu-link
-            {% if pk == category.pk or pk == None and category.pk == 1 %}
-                menu-link-active
-            {% endif %}"
-            >{{ category.name }}</a>
-        </li>
-    {% endfor %}
-</ul>
+<div class="nav-menu padding-site clearfix">
+    <div class="nav-menu-header clearfix"> 
+        <ul class = "nav-menu-ul">
+            {% for category in categories %}
+                <li class="nav-menu-list"><a href="{% url 'products:category' category.pk %}"
+                    class = "nav-menu-link
+                    {% if pk == category.pk or pk == None and category.pk == 1 %}
+                        menu-link-active
+                    {% endif %}"
+                    >{{ category.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
